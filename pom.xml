@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.example</groupId>
+  <artifactId>demo</artifactId>
+  <version>1.0</version>
+  <packaging>war</packaging>
+  <description/>
+
+	<properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<sa-struts-version>1.0.4-sp9</sa-struts-version>
+    <!-- <java.version>17</java.version> -->
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <maven.compiler.target>1.7</maven.compiler.target>
+	</properties>
+
+  <repositories>
+    <repository>
+      <id>maven.seasar.org</id>
+      <name>The Seasar Foundation Maven2 Repository</name>
+      <url>http://maven.seasar.org/maven2</url>
+    </repository>
+  </repositories>
+
+  <dependencies>
+    <dependency>
+      <groupId>jstl</groupId>
+      <artifactId>jstl</artifactId>
+      <version>1.1.2</version>
+    </dependency>
+    <dependency>
+      <groupId>taglibs</groupId>
+      <artifactId>standard</artifactId>
+      <version>1.1.2</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-collections</groupId>
+      <artifactId>commons-collections</artifactId>
+      <version>3.1</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-el</groupId>
+      <artifactId>commons-el</artifactId>
+      <version>1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-fileupload</groupId>
+      <artifactId>commons-fileupload</artifactId>
+      <version>1.2</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>1.3.2</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging</artifactId>
+      <version>1.1</version>
+      <exclusions>
+        <exclusion>
+          <groupId>avalon-framework</groupId>
+          <artifactId>avalon-framework</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>logkit</groupId>
+          <artifactId>logkit</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>javax.servlet</groupId>
+          <artifactId>servlet-api</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>commons-validator</groupId>
+      <artifactId>commons-validator</artifactId>
+      <version>1.2.0</version>
+    </dependency>
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>1.2.13</version>
+    </dependency>
+<!-- SAStruts -->
+    <dependency>
+      <groupId>org.seasar.sastruts</groupId>
+      <artifactId>sa-struts</artifactId>
+      <version>${sa-struts-version}</version>
+    </dependency>
+<!-- #if ($use-portlet.matches("(?i)y|yes|true|on"))## -->
+    <!-- Portlet -->
+    <!-- <dependency> -->
+      <!-- <groupId>org.seasar.sastruts</groupId> -->
+      <!-- <artifactId>sa-struts-portlet</artifactId> -->
+      <!-- <version>${sa-struts-portlet-version}</version> -->
+    <!-- </dependency> -->
+<!-- #end## -->
+<!-- #if ($use-dbflute.matches("(?i)y|yes|true|on"))## -->
+    <!-- DBFlute -->
+    <!-- <dependency> -->
+      <!-- <groupId>org.seasar.dbflute</groupId> -->
+      <!-- <artifactId>dbflute-runtime</artifactId> -->
+      <!-- <version>${dbflute-version}</version> -->
+    <!-- </dependency> -->
+    <!-- <dependency> -->
+      <!-- <groupId>com.h2database</groupId> -->
+      <!-- <artifactId>h2</artifactId> -->
+      <!-- <version>${h2-version}</version> -->
+    <!-- </dependency> -->
+<!-- #end## -->
+<!-- #if ($use-mobylet.matches("(?i)y|yes|true|on"))##
+    <dependency>
+      <groupId>org.seasar.mobylet</groupId>
+      <artifactId>mobylet-charset</artifactId>
+      <version>${mobylet-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.seasar.mobylet</groupId>
+      <artifactId>mobylet-core</artifactId>
+      <version>${mobylet-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.seasar.mobylet</groupId>
+      <artifactId>mobylet-taglibs</artifactId>
+      <version>${mobylet-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.seasar.mobylet</groupId>
+      <artifactId>mobylet-mail</artifactId>
+      <version>${mobylet-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.seasar.mobylet</groupId>
+      <artifactId>mobylet-s2extension</artifactId>
+      <version>${mobylet-version}</version>
+    </dependency>
+#end## -->
+<!-- Geronimo -->
+    <dependency>
+      <groupId>org.apache.geronimo.specs</groupId>
+      <artifactId>geronimo-annotation_1.0_spec</artifactId>
+      <version>1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.geronimo.specs</groupId>
+      <artifactId>geronimo-ejb_3.0_spec</artifactId>
+      <version>1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.geronimo.specs</groupId>
+      <artifactId>geronimo-interceptor_3.0_spec</artifactId>
+      <version>1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.geronimo.specs</groupId>
+      <artifactId>geronimo-jpa_3.0_spec</artifactId>
+      <version>1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.geronimo.specs</groupId>
+      <artifactId>geronimo-jta_1.1_spec</artifactId>
+      <version>1.0</version>
+    </dependency>
+    <!-- If you want to use J2EE 1.4 server(not Tomcat), 
+         add geronimo-jta_1.1_spec-1.0-tsr.jar -->
+    <dependency>
+      <groupId>org.apache.geronimo.specs</groupId>
+      <artifactId>geronimo-jsp_2.0_spec</artifactId>
+      <version>1.0</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.geronimo.specs</groupId>
+      <artifactId>geronimo-servlet_2.4_spec</artifactId>
+      <version>1.0</version>
+      <scope>provided</scope>
+    </dependency>
+<!-- Removed from war -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.2</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.easymock</groupId>
+      <artifactId>easymock</artifactId>
+      <version>2.2</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>xalan</groupId>
+      <artifactId>xalan</artifactId>
+      <version>2.5.1</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>xml-apis</groupId>
+      <artifactId>xml-apis</artifactId>
+      <version>2.0.2</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <finalName>demo</finalName>
+    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+      <plugins>
+        <plugin>
+          <artifactId>maven-clean-plugin</artifactId>
+          <version>3.1.0</version>
+        </plugin>
+        <!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_war_packaging -->
+        <plugin>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>3.0.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.8.0</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.22.1</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-war-plugin</artifactId>
+          <version>3.2.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-install-plugin</artifactId>
+          <version>2.5.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>2.8.2</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
+</project>
+
